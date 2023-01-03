@@ -5,18 +5,23 @@ using namespace std;
 int main()
 {
     ofstream fout;
-    char ch;
+    int i,n;
     char name[20];
     int id;
     char address[20];
     fout.open("Employee.txt",ios::app);
-    cout<<"\n Enter Employee Name:";
-    cin>>name;
-    cout<<"\n Enter Employee Id:";
-    cin>>id;
-    cout<<"\n Enter Employee Address:";
-    cin>>address;
-    fout<<"\n"<<name<<setw(10)<<id<<setw(10)<<address;
-    cout<<"\n Employee Details inserted sucessfully";
+    cout<<"\n Enter how many Employee Details you want to insert:";
+    cin>>n;
+    for(i=0;i<n;i++)
+    {
+        cout<<"\n Enter Employee Name:";
+        cin>>name;
+        cout<<"\n Enter Employee Id:";
+        cin>>id;
+        cout<<"\n Enter Employee Address:";
+        cin>>address;
+        fout<<"\n"<<name<<"\t"<<id<<"\t"<<address;
+    }
+    cout<<"\n Employee File Written sucessfully!!!";
     fout.close();
 }
